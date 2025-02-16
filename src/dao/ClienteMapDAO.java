@@ -30,7 +30,7 @@ public class ClienteMapDAO implements IClienteDAO{
         this.map.put(cliente.getCpf(), cliente);
         return true;
     }
-    
+
     /**
      * Argumento cliente: O método recebe um objeto Cliente que contém as informações do cliente a ser cadastrado.
      * Processo: O método verifica se já existe um cliente com o mesmo CPF no mapa:
