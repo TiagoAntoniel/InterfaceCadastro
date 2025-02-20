@@ -82,18 +82,25 @@ public class ClienteSetDAO implements IClienteDAO{
 
     @Override
     public void alterar(Cliente cliente) {
+        // Verifica se o cliente existe no conjunto
         if (this.set.contains(cliente)) {
+            // Itera sobre os clientes no set para encontrar e atualizar o cliente correspondente
             for (Cliente clienteCadastrado : this.set) {
                 if (clienteCadastrado.equals(cliente)) {
+                    // Atualiza os dados do cliente
+
                     clienteCadastrado.setNome(cliente.getNome());
                     clienteCadastrado.setTel(cliente.getTel());
                     clienteCadastrado.setNumero(cliente.getNumero());
                     clienteCadastrado.setEnd(cliente.getEnd());
                     clienteCadastrado.setCidade(cliente.getCidade());
                     clienteCadastrado.setEstado(cliente.getEstado());
-                    break;
+                    break; // Sai do loop após a atualização
                 }
             }
+        } else {
+            // Caso o cliente não seja encontrado, podemos incluir um feedback
+            System.out.println("Cliente não encontrado.");
         }
     }
 

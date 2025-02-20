@@ -22,6 +22,7 @@ public class Cliente {
         this.estado = estado;
     }
 
+
     public String getNome() {
         return nome;
     }
